@@ -1,0 +1,17 @@
+FROM ruby:3.3.5 AS rails-toolbox
+
+ENV INSTALL_PATH=/opt/app
+RUN mkdir -p $INSTALL_PATH
+
+RUN gem install rails bundler
+
+WORKDIR $INSTALL_PATH 
+
+CMD ["/bin/bash"]
+
+#RUN apt-get update && \
+#    apt-get install -y \
+#    build-essential \
+#    nodejs \
+
+
